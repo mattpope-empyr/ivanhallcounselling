@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+/*
+  Ivan Hall Counselling — design system
+  Soft, warm, neutral palette intended to feel calm and trustworthy.
+*/
+
+@theme {
+  /* Warm neutral foundations */
+  --color-cream: #fbf8f2;
+  --color-sand: #f3ecdf;
+  --color-sand-deep: #e7dccb;
+  --color-white-warm: #fffdf9;
+
+  /* Calm, healing greens (primary) */
+  --color-sage: #7ba08c;
+  --color-sage-deep: #4f6e60;
+  --color-sage-ink: #36504350;
+
+  /* Warm clay accent (used sparingly) */
+  --color-clay: #c28e6d;
+  --color-clay-soft: #e7c9b3;
+
+  /* Text */
+  --color-ink: #29332d;
+  --color-stone: #5d6862;
+  --color-stone-soft: #8a938d;
+
+  /* Mapped roles */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+
+  /* Typography */
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radii */
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+
+  /* Soft, layered shadows */
+  --shadow-soft: 0 1px 2px rgba(41, 51, 45, 0.04), 0 8px 24px rgba(41, 51, 45, 0.06);
+  --shadow-lift: 0 2px 6px rgba(41, 51, 45, 0.05), 0 18px 40px rgba(41, 51, 45, 0.1);
+
+  /* Smooth easing */
+  --ease-gentle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Accessible focus ring */
+  :focus-visible {
+    outline: 2px solid var(--color-sage-deep);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-clay-soft);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  /* Reveal-on-scroll: elements start hidden, GSAP/no-JS fallback reveals them */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    will-change: transform, opacity;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s var(--ease-gentle), transform 0.8s var(--ease-gentle);
+  }
+
+  /* Subtle grain-free soft radial backdrops */
+  .bg-calm-gradient {
+    background:
+      radial-gradient(60% 55% at 15% 0%, rgba(123, 160, 140, 0.18) 0%, rgba(123, 160, 140, 0) 60%),
+      radial-gradient(50% 50% at 100% 10%, rgba(194, 142, 109, 0.14) 0%, rgba(194, 142, 109, 0) 55%),
+      var(--color-cream);
+  }
+
+  /* Interactive content cards: gentle lift + accent on hover/focus */
+  .card-hover {
+    transition:
+      transform 0.3s var(--ease-gentle),
+      box-shadow 0.3s var(--ease-gentle),
+      border-color 0.3s var(--ease-gentle);
+  }
+  .card-hover:hover,
+  .card-hover:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklab, var(--color-sage-deep) 55%, transparent);
+  }
+}
+
+/* ---- Horizon hero (warm, re-themed WebGL hero) ---- */
+.hh-hero {
+  position: relative;
+  width: 100%;
+  min-height: 78svh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: 2.5rem 3rem;
+}
+
+.hh-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+.hh-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 58% at 50% 42%, rgba(251, 248, 242, 0.6) 0%, rgba(251, 248, 242, 0.12) 48%, rgba(251, 248, 242, 0) 76%),
+    linear-gradient(to bottom, rgba(251, 248, 242, 0) 70%, var(--color-cream) 100%);
+}
+
+.hh-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hh-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.24em;
+}
+.hh-word:last-child {
+  margin-right: 0;
+}
+
+.hh-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hh-scroll {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-sage-deep);
+}
+.hh-scroll-text {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+}
+.hh-scroll-line {
+  position: relative;
+  width: 2px;
+  height: 46px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--color-sage-deep), rgba(79, 110, 96, 0.15));
+  overflow: hidden;
+}
+.hh-scroll-line::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: -50%;
+  height: 50%;
+  background: var(--color-sage-deep);
+  animation: hh-scroll-move 2.2s var(--ease-gentle) infinite;
+}
+@keyframes hh-scroll-move {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(340%);
+  }
+}
+/* On shorter screens the hero content fills the viewport, so hide the scroll
+   cue rather than let it overlap the last line ("Free 15-minute chat …"). */
+@media (max-height: 860px) {
+  .hh-scroll {
+    display: none;
+  }
+}
+
+/* Gentle fade for tab/step panels (disabled under reduced motion below) */
+.hh-fade {
+  animation: hh-fade-in 0.45s var(--ease-gentle) both;
+}
+@keyframes hh-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect reduced motion: disable transforms/animation, show content */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

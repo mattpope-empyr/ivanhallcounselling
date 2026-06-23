@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ivanhall-counselling",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Environment variables: set NEXT_PUBLIC_CALENDLY_URL etc. in the Cloudflare
+  // dashboard (Workers > Settings > Variables) or with `wrangler secret put`.
+  // "vars": { "NEXT_PUBLIC_CALENDLY_URL": "https://calendly.com/your-handle/free-consultation" }
+}
