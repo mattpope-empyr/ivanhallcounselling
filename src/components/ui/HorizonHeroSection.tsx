@@ -93,7 +93,7 @@ export const Component = ({
 
     const camera = new THREE.PerspectiveCamera(70, initial.w / initial.h, 0.1, 2000);
     camera.position.set(0, 8, 100);
-    camera.lookAt(0, 6, -300);
+    camera.lookAt(0, 20, -300);
     r.camera = camera;
 
     const renderer = new THREE.WebGLRenderer({
@@ -173,10 +173,10 @@ export const Component = ({
 
     // ---- Warm layered horizon ----
     const layers = [
-      { z: -60, height: 42, color: PALETTE.sageDeep, opacity: 1, y: -34 },
-      { z: -120, height: 58, color: PALETTE.sage, opacity: 0.85, y: -28 },
-      { z: -200, height: 78, color: PALETTE.claySoft, opacity: 0.6, y: -20 },
-      { z: -300, height: 100, color: PALETTE.sand, opacity: 0.4, y: -10 },
+      { z: -60, height: 42, color: PALETTE.sageDeep, opacity: 1, y: -74 },
+      { z: -120, height: 58, color: PALETTE.sage, opacity: 0.85, y: -66 },
+      { z: -200, height: 78, color: PALETTE.claySoft, opacity: 0.6, y: -56 },
+      { z: -300, height: 100, color: PALETTE.sand, opacity: 0.4, y: -44 },
     ];
 
     layers.forEach((layer, index) => {
@@ -266,7 +266,7 @@ export const Component = ({
         const floatY = Math.cos(t * 0.13) * 1.0;
         r.camera.position.x = r.smooth.x * 12 + floatX;
         r.camera.position.y = 8 + r.smooth.y * 6 + floatY;
-        r.camera.lookAt(0, 6, -300);
+        r.camera.lookAt(0, 20, -300);
       }
 
       r.hills.forEach((h) => {
@@ -391,14 +391,14 @@ export const Component = ({
           width={320}
           height={160}
           priority
-          className="hh-logo mb-6 h-auto w-64 sm:w-80 lg:w-96"
+          className="hh-logo mb-3 h-auto w-36 sm:w-44"
         />
         <span className="hh-eyebrow inline-flex items-center gap-2 rounded-full bg-white-warm/80 px-4 py-1.5 text-sm font-semibold text-sage-deep shadow-soft ring-1 ring-sage/20 backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-sage" aria-hidden />
           {eyebrow}
         </span>
 
-        <h1 className="hh-title mt-6 text-[2.6rem] leading-[1.08] sm:text-6xl">
+        <h1 className="hh-title mt-4 text-[2.6rem] leading-[1.08] sm:text-6xl">
           {words.map((word, wi) => (
             <span key={`${wi}-${word}`} className="hh-word">
               {word.split("").map((ch, ci) => (
@@ -410,11 +410,11 @@ export const Component = ({
           ))}
         </h1>
 
-        <p className="hh-sub mt-6 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">
+        <p className="hh-sub mt-4 max-w-xl text-lg leading-relaxed text-stone sm:text-xl">
           {subtitle}
         </p>
 
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
           <span className="hh-cta">
             <ButtonLink href="/free-consultation" size="lg">
               Book a free consultation
@@ -427,7 +427,7 @@ export const Component = ({
           </span>
         </div>
 
-        <p className="hh-cta mt-5 text-sm text-stone-soft">
+        <p className="hh-cta mt-4 text-sm text-white-warm">
           Free 20-minute chat · Phone or video · No obligation
         </p>
       </div>
