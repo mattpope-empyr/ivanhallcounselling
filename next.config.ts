@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   // `images.unoptimized`, then use `npm run cf:deploy`.
   output: "export",
 
+  // Required when serving from a GitHub Pages subdirectory URL
+  // (https://mattpope-empyr.github.io/ivanhallcounselling/).
+  // Remove this once the custom domain (www.ivanhallcounselling.co.uk) is live
+  // and pointing at GitHub Pages — the custom domain serves from root.
+  basePath: "/ivanhallcounselling",
+
   // GitHub Pages (and static hosts) serve `path/index.html` most reliably.
   trailingSlash: true,
 
