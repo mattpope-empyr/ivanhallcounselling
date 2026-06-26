@@ -71,6 +71,18 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/images/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/images/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/images/favicon.ico",
+    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/images/site.webmanifest",
+  appleWebApp: {
+    title: "IC",
+  },
 };
 
 export const viewport: Viewport = {

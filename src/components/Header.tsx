@@ -11,7 +11,8 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState({ open: false, pathname });
+  const open = mobileMenu.open && mobileMenu.pathname === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -20,8 +21,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change + lock scroll while open.
-  useEffect(() => setOpen(false), [pathname]);
+  // Lock scroll while mobile menu is open.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -74,7 +74,13 @@ export function Header() {
         {/* Mobile toggle */}
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() =>
+            setMobileMenu((prev) =>
+              prev.pathname === pathname
+                ? { pathname, open: !prev.open }
+                : { pathname, open: true }
+            )
+          }
           className="grid h-11 w-11 place-items-center rounded-full text-ink ring-1 ring-sand-deep transition hover:bg-sand lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
