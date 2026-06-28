@@ -7,28 +7,6 @@ The site deploys automatically via GitHub Actions. Every push to `main` runs
 
 No manual steps needed for routine updates — just push to `main`.
 
-### First-time setup (one-off)
-
-1. In the GitHub repo → **Settings → Pages → Build and deployment**, set Source
-   to **GitHub Actions**.
-2. Push to `main`. The Actions tab will show the deployment progress.
-3. The site will be live at the URL shown in Settings → Pages.
-
-### Custom domain
-
-`public/CNAME` sets the domain to `www.ivanhallcounselling.co.uk`. You also
-need to configure DNS at your registrar:
-
-| Type  | Name | Value                        |
-|-------|------|------------------------------|
-| CNAME | www  | `mattpope-empyr.github.io`   |
-
-Then in GitHub → Settings → Pages → Custom domain, enter
-`www.ivanhallcounselling.co.uk` and enable **Enforce HTTPS**.
-
-> GitHub automatically redirects the apex domain (`ivanhallcounselling.co.uk`)
-> to `www` once the CNAME record resolves.
-
 ### Manual / emergency deploy
 
 ```bash
@@ -49,15 +27,6 @@ Forms use `sendEnquiry` in `src/lib/sendEnquiry.ts` — no server required:
 - **Automatic submissions:** create a free [Formspree](https://formspree.io)
   form and set `NEXT_PUBLIC_FORM_ENDPOINT` in a GitHub Actions secret (or paste
   the endpoint into `FORM_ENDPOINT_FALLBACK` in `src/lib/site.ts`), then push.
-
----
-
-## Before going live checklist
-
-- [ ] Confirm `site.url` in `src/lib/site.ts` matches the live domain.
-- [ ] Confirm phone number and BACP membership number are current.
-- [ ] Set up custom domain DNS (see above) and enable Enforce HTTPS.
-- [ ] Submit `sitemap.xml` in Google Search Console after first deploy.
 
 ---
 

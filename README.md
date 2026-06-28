@@ -92,17 +92,15 @@ components:
 
 On-site is done; these off-site/owner steps are what actually move local rankings:
 
-1. Set the real domain in `site.url` (`src/lib/site.ts`) so canonicals, sitemap and
-   schema use it.
-2. In `src/lib/site.ts`, confirm/replace: `location.postcode` + `lat`/`lng` (use the
+1. In `src/lib/site.ts`, confirm/replace: `location.postcode` + `lat`/`lng` (use the
    real practice location), and add `profiles.googleBusiness` / `profiles.bacpDirectory`
    URLs (these feed schema `sameAs`).
-3. **Create / claim a Google Business Profile** (category: *Counselor*), with the exact
+2. **Create / claim a Google Business Profile** (category: *Counselor*), with the exact
    same Name-Address-Phone (NAP) as the site. This is the single biggest driver of map-pack
    visibility and calls.
-4. **Gather reviews** on the Google Business Profile — volume + recency strongly affect
+3. **Gather reviews** on the Google Business Profile — volume + recency strongly affect
    the local pack. (Only add `aggregateRating` schema once real reviews exist.)
-5. List the practice in **BACP's "Find a therapist" directory** and a few reputable
+4. List the practice in **BACP's "Find a therapist" directory** and a few reputable
    directories (Counselling Directory, Psychology Today) with consistent NAP.
-6. After deploy: submit `sitemap.xml` in **Google Search Console**, and validate the
+5. After deploy: submit `sitemap.xml` in **Google Search Console**, and validate the
    pages with the **Rich Results Test** and **PageSpeed Insights**.
