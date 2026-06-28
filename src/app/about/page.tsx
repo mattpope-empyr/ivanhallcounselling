@@ -8,7 +8,7 @@ import { BreadcrumbSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Ivan Hall",
+  title: "About — Ivan Hall, BACP Counsellor",
   description:
     "Meet Ivan Hall — a BACP-registered counsellor in Winchester with 20+ years in mental health and education, working in a warm, collaborative, person-led way.",
   alternates: { canonical: "/about" },

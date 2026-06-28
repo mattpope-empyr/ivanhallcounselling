@@ -43,7 +43,7 @@ export function IntroSection() {
               <figcaption className="mt-6 flex items-center gap-3">
                 <Image
                   src="/images/ivan-portrait.jpg"
-                  alt="Ivan Hall"
+                  alt="Ivan Hall, BACP-registered counsellor in Winchester"
                   width={96}
                   height={96}
                   className="h-12 w-12 rounded-full object-cover object-top ring-2 ring-sand-deep/60"

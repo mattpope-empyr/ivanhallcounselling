@@ -387,7 +387,7 @@ export const Component = ({
       <div className="hh-content mx-auto flex max-w-3xl flex-col items-center px-5 text-center sm:px-8">
         <Image
           src="/images/logo-trans.png"
-          alt="Ivan Hall Counselling"
+          alt="Ivan Hall Counselling logo"
           width={320}
           height={160}
           priority

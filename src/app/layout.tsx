@@ -30,20 +30,6 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.counsellor }],
-  keywords: [
-    "counselling Winchester",
-    "counsellor Hampshire",
-    "BACP counsellor",
-    "anxiety counselling",
-    "Sparsholt counselling",
-    "relationship counselling Winchester",
-    "anger management counselling",
-    "talking therapy Hampshire",
-    "neurodiversity-affirming counselling",
-    "neurodivergent counselling Winchester",
-    "autism counselling Winchester",
-    "ADHD counselling Hampshire",
-  ],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -81,7 +67,7 @@ export const metadata: Metadata = {
   },
   manifest: "/images/site.webmanifest",
   appleWebApp: {
-    title: "IC",
+    title: "Ivan Hall",
   },
 };
 
