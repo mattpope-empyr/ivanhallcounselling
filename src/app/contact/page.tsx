@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Ivan Hall Counselling in Sparsholt, Winchester. Call, email or send a message — and book your free 20-minute consultation.",
   alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact" },
 };
 
 export default function ContactPage() {

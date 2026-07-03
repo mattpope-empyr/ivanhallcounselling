@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Counselling fees with Ivan Hall: £60 per 50-minute session, with concessions for students and those on a low income. Free 20-minute consultation. Clear, simple terms.",
   alternates: { canonical: "/fees" },
+  openGraph: { url: "/fees" },
 };
 
 const fineprint = [

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Confidential, neurodiversity-affirming counselling in Winchester for anxiety, relationships, anger, low mood, life changes and self-esteem — including autistic and ADHD adults. Sessions in person, by phone or video.",
   alternates: { canonical: "/services" },
+  openGraph: { url: "/services" },
 };
 
 export default function ServicesPage() {

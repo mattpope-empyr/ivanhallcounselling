@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "See current counselling availability in Winchester with Ivan Hall and book live online. Pick an open slot over the coming weeks — in person, by phone or video.",
   alternates: { canonical: "/availability" },
+  openGraph: { url: "/availability" },
 };
 
 export default function AvailabilityPage() {

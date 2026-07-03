@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Meet Ivan Hall — a BACP-registered counsellor in Winchester with 20+ years in mental health and education, working in a warm, collaborative, person-led way.",
   alternates: { canonical: "/about" },
+  openGraph: { url: "/about" },
 };
 
 export default function AboutPage() {

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Common questions about counselling with Ivan Hall in Winchester — sessions, fees, confidentiality, online and phone counselling, and what to expect.",
   alternates: { canonical: "/faqs" },
+  openGraph: { url: "/faqs" },
 };
 
 export default function FaqsPage() {

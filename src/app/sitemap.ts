@@ -51,7 +51,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return discoverRoutes(APP_DIR, "").map((route) => ({
-    url: `${site.url}${route === "/" ? "" : route}`,
+    url: `${site.url}${route === "/" ? "" : route}/`,
     lastModified: new Date(),
     changeFrequency: CHANGE_FREQ[route] ?? "monthly",
     priority: PRIORITY[route] ?? 0.7,

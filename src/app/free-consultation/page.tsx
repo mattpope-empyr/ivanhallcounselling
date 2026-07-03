@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Book a free, no-obligation 20-minute consultation with Ivan Hall — by phone or video. A relaxed chance to see if it feels like a good fit.",
   alternates: { canonical: "/free-consultation" },
+  openGraph: { url: "/free-consultation" },
 };
 
 export default function FreeConsultationPage() {

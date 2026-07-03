@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "What to expect from counselling with Ivan Hall — from your free 20-minute consultation to your first session and beyond. Gentle, unhurried and led by you.",
   alternates: { canonical: "/how-it-works" },
+  openGraph: { url: "/how-it-works" },
 };
 
 const expectations = [

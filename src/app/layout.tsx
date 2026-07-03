@@ -34,7 +34,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: site.url,
     siteName: site.name,
     title: `${site.name} — Counselling in Winchester, Hampshire`,
     description: site.description,

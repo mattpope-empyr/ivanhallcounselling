@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Request a counselling session with Ivan Hall in Winchester. Choose a date and time that suits you, in person, by phone or video. £60 per 50-minute session.",
   alternates: { canonical: "/booking" },
+  openGraph: { url: "/booking" },
 };
 
 export default function BookingPage() {
