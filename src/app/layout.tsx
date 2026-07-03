@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lora, Nunito_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { Header } from "@/components/Header";
@@ -95,6 +96,18 @@ export default function RootLayout({
         <Footer />
         <MobileBookingBar />
         <OrganizationSchema />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0J3VLN7L25"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0J3VLN7L25');
+          `}
+        </Script>
       </body>
     </html>
   );
