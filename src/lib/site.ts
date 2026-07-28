@@ -8,7 +8,7 @@ export const site = {
   counsellor: "Ivan Hall",
   shortName: "Ivan Hall",
   // Used for metadataBase and absolute URLs (sitemap, schema, OG). Update on deploy.
-  url: "https://www.ivanhallcounselling.co.uk",
+  url: "https://ivanhallcounselling.co.uk",
   tagline: "You don't have to figure it all out alone.",
   description:
     "Warm, BACP-registered counselling in Sparsholt, Winchester. In-person, phone and video sessions for anxiety, relationships, anger and life's harder seasons. Book a free 20-minute consultation.",
